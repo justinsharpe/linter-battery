@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "timeout_s": 45,
+  "file_limit": 400,
+  "gate_on": ["error"],
+  "tools": [
+    {"name": "ruff", "binary": "ruff", "parser": "ruff", "files": {"extensions": [".py"]}, "severity": "error"},
+    {"name": "ty", "binary": "ty", "parser": "ty", "files": {"extensions": [".py"]}, "deep": true, "severity": "error"},
+    {"name": "bandit", "binary": "bandit", "parser": "bandit", "files": {"extensions": [".py"]}, "deep": true, "severity": "warning"},
+    {"name": "oxlint", "binary": "oxlint", "parser": "oxlint", "files": {"extensions": [".ts", ".tsx", ".js", ".jsx"]}, "severity": "warning", "severity_map": {"error": "error", "warning": "warning"}},
+    {"name": "swiftlint", "binary": "swiftlint", "parser": "swiftlint", "files": {"extensions": [".swift"]}, "severity": "warning", "severity_map": {"error": "error", "warning": "warning"}},
+    {"name": "shellcheck", "binary": "shellcheck", "parser": "shellcheck", "files": {"extensions": [".sh", ".bash"]}, "severity": "warning"},
+    {"name": "shfmt", "binary": "shfmt", "parser": "shfmt", "files": {"extensions": [".sh", ".bash"]}, "severity": "info"},
+    {"name": "hadolint", "binary": "hadolint", "parser": "hadolint", "files": {"dockerfile": true}, "severity": "warning"},
+    {"name": "actionlint", "binary": "actionlint", "parser": "actionlint", "files": {"workflow": true}, "severity": "error"},
+    {"name": "typos", "binary": "typos", "parser": "typos", "files": {"docs": true}, "severity": "warning"},
+    {"name": "vale", "binary": "vale", "parser": "vale", "files": {"docs": true}, "severity": "warning"},
+    {"name": "gitleaks", "binary": "gitleaks", "parser": "gitleaks", "files": {"staged": true}, "severity": "error"}
+  ]
+}
